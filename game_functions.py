@@ -145,9 +145,12 @@ def change_fleet_direction(ai_settings, aliens):
         alien.rect.y += ai_settings.fleet_drop_speed
     ai_settings.fleet_direction *= -1
 
-def update_aliens(ai_settings, aliens):
+def update_aliens(ai_settings, ship, aliens):
     """
     Проверяет, достиг ли флот края экрана, после чего обновляет позиции всех пришельцев во флоте.
     """
     check_fleet_edges(ai_settings, aliens)
     aliens.update()
+    # Проверка коллизий "пришелец-корабль".
+    if pygame.sprite.spritecollideany(ship, aliens):
+        print("Ship hit!!!")
