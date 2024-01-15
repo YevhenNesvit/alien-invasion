@@ -32,12 +32,12 @@ def check_play_button(ai_settings, screen, stats, play_button, ship, aliens, bul
         # Сброс игровой статистики.
         stats.reset_stats()
         stats.game_active = True
-    # Очистка списков пришельцев и пуль.
-    aliens.empty()
-    bullets.empty()
-    # Создание нового флота и размещение корабля в центре.
-    create_fleet(ai_settings, screen, ship, aliens)
-    ship.center_ship()
+        # Очистка списков пришельцев и пуль.
+        aliens.empty()
+        bullets.empty()
+        # Создание нового флота и размещение корабля в центре.
+        create_fleet(ai_settings, screen, ship, aliens)
+        ship.center_ship()
 
 def update_screen(ai_settings, screen, stats, ship, aliens, bullets, play_button):
     """
